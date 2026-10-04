@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="icon" href="/icon-192.png" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <title>Révision Masquée</title>
+</head>
+<body>
+  <aside id="side">
+    <input id="search" type="search" placeholder="🔍 Rechercher un chapitre, un mot-clé…" />
+    <div id="tree"></div>
+    <button id="addRoot" class="btn">＋ Matière</button>
+  </aside>
+  <div id="backdrop"></div>
+
+  <main>
+    <header>
+      <button id="menu" class="btn icon" aria-label="Menu">☰</button>
+      <input id="title" placeholder="Titre" />
+      <button id="theme" class="btn icon" aria-label="Thème">🌓</button>
+    </header>
+
+    <p id="empty">Crée une matière, puis un chapitre, puis une synthèse pour commencer.</p>
+
+    <section id="doc" hidden>
+      <div class="toolbar">
+        <div class="seg">
+          <button id="modeEdit" class="btn on">✏️ Édition</button>
+          <button id="modeRev" class="btn">🎯 Révision</button>
+        </div>
+        <span id="editTools">
+          <button class="btn" data-cmd="bold"><b>B</b></button>
+          <button class="btn" data-cmd="italic"><i>I</i></button>
+          <button class="btn" data-cmd="underline"><u>U</u></button>
+          <button id="secret" class="btn accent" title="Ctrl+M — ou tape [[mot]] / ~mot~">🙈 Masquer</button>
+        </span>
+        <span id="revTools" hidden>
+          <button id="hideAll" class="btn">Masquer tout</button>
+          <button id="showAll" class="btn">Révéler tout</button>
+        </span>
+      </div>
+      <div id="editor" contenteditable="true" spellcheck="true"></div>
+    </section>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
